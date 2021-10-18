@@ -87,8 +87,8 @@ var grid;
                         </div>
                         <div class="col">
                             <h5 id="steps"> steps = ${steps}</h5>
-                            <h5 id="x-inc"> x-inc = ${xInc}</h5>
-                            <h5 id="y-inc"> y-inc = ${yInc}</h5>
+                            <h5 id="x-inc"> x-inc = ${xInc == 1 ? Math.round(xInc) : xInc}</h5>
+                            <h5 id="y-inc"> y-inc = ${yInc == 1 ? Math.round(yInc) : yInc}</h5>
                         </div>
                       </div>`;
 		const code2 = `<button class="btn mx-auto" id="next-btn">Next</button>`;
@@ -106,8 +106,8 @@ var grid;
           <tbody id="table-body">
           <tr>
             <th scope="row">${count}</th>
-            <td>${x1}</td>
-              <td>${y1}</td>
+            <td>${xInc == 1 ? Math.round(x1) : x1}</td>
+              <td>${yInc == 1 ? Math.round(y1) : y1}</td>
               <td>${xInc == 1 ? Math.round(y1) : Math.round(x1)}</td>
               </tr>
             </tbody>
@@ -131,8 +131,8 @@ var grid;
 			const code4 = `
             <tr>
               <th scope="row">${count}</th>
-              <td>${(x1).toFixed(5)}</td>
-              <td>${(y1).toFixed(5)}</td>
+              <td>${xInc == 1 ? Math.round(x1) : (x1).toFixed(4)}</td>
+              <td>${yInc == 1 ? Math.round(y1) : (y1).toFixed(4)}</td>
               <td>${xInc == 1 ? Math.round(y1) : Math.round(x1)}</td>
             </tr>`;
 			tableBody.insertAdjacentHTML("beforeend", code4);
