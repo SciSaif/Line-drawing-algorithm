@@ -2,15 +2,53 @@ function Grid() {
 	this.x = scale * 3;
 	this.y = canvas.height - scale * 3;
 
-	console.log("here");
+    this.clear = function(){
+        for(let i = 0; i<canvas.width; i+=scale){
+            for(let j =0; j<canvas.height; j+=scale){
+                this.removeRect(i, j);
+            }
+        }
+        this.draw();
+    }
+
+    this.drawRect = function(X, Y) {
+        X = this.x + (scale*(X-1));
+        Y = this.y - (scale*(Y));
+        ctx.fillStyle = "#f72585";
+        ctx.fillRect(X+1, Y+1, scale-2, scale-2);
+    }
+
+    this.removeRect = function(X,Y) {
+        ctx.fillStyle = "#3e3e3e";
+        ctx.fillRect(X+1, Y+1, scale-2, scale-2);
+    }
+
+    // this.hover = function(x, y) {
+    //     x = Math.floor((x/scale)) * scale;
+    //     y = Math.floor((y/scale)) * scale;
+    //     ctx.fillStyle = "#333333";
+    //     ctx.fillRect(x+1, y+1, scale-2, scale-2);
+    //     //remove color from surrounding
+    //     this.removeRect(x-scale, y-scale);
+    //     this.removeRect(x+scale, y+scale);
+    //     this.removeRect(x+scale, y);
+    //     this.removeRect(x-scale, y);
+    //     this.removeRect(x, y-scale);
+    //     this.removeRect(x, y+scale);
+    // }
+
 	this.draw = function () {
 		//the grid
+        //vertical
 		for (let i = 0; i <= canvas.width; i += scale) {
 			ctx.beginPath();
 			ctx.moveTo(i, 0);
 			ctx.lineTo(i, canvas.height);
 			ctx.strokeStyle = "#787878";
 			ctx.stroke();
+		}
+        //horizontal
+		for (let i = 0; i <= canvas.height; i += scale) {
 			ctx.beginPath();
 			ctx.moveTo(0, i);
 			ctx.lineTo(canvas.width, i);
@@ -70,4 +108,7 @@ function Grid() {
             num++;
         }
 	};
+
+
+    
 }

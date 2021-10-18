@@ -1,0 +1,96 @@
+body{
+    background-color: #3e3e3e;
+    color: white;
+}
+
+.main{
+    height: 100vh;
+}
+.main-row{
+    height: 100%;
+}
+
+
+h1 {
+    color: white;
+}
+
+.DDA {
+    color: red;
+}
+
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .vertical-end {
+    display: flex;
+    align-items:flex-end;
+}
+  .vertical-top {
+    display: flex;
+    align-items:flex-start;
+}
+
+canvas {
+    margin-right: 50px;
+    margin-top: 100px;
+}
+
+label{
+    color: white;
+    min-width: 50px;
+    font-weight: 600;
+}
+
+input{
+    background-color: #1b1b1b;
+    color: white;
+}
+
+#start-btn {
+    background-color: #fa0202;
+    color: white;
+    font-weight: 400;
+}
+#start-btn:hover{
+    background-color: #c40000;
+
+}
+
+
+.table {
+    color: white;
+    animation: 0.2s ease-in;
+}
+
+
+.thead {
+    background-color: #1b1b1b71;
+    
+}
+
+#next-btn {
+    color: white;
+    background-color: rgb(1, 184, 184);
+    margin-bottom: 10px;
+}
+
+#next-btn:hover {
+    background-color: rgb(2, 152, 152);
+}
+
+
+#scisaif {
+    color: red;
+}
+
+.credits {
+    position: fixed;
+    z-index: 100;
+    bottom: 10px;
+    right: 10px;
+}
+
