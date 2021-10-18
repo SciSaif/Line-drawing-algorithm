@@ -106,3 +106,11 @@ input{
     margin-right: 20px;
 }
 
+#canvas-size {
+    position: absolute;
+    top: 5px;
+    right: 50%;
+    
+
+}
+

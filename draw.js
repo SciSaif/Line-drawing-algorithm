@@ -1,6 +1,6 @@
 const canvas = document.querySelector(".canvas");
 const ctx = canvas.getContext("2d");
-const scale = 20;
+const scale = 30;
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 
@@ -11,18 +11,23 @@ const y2Input = document.querySelector("#Y2");
 const startBtn = document.querySelector("#start-btn");
 const playBtn = document.querySelector("#play-btn");
 const info = document.querySelector("#info");
+const small = document.querySelector("#small");
+const large = document.querySelector("#large");
 const stepTable = document.querySelector("#step-table");
 const stepTableTable = document.querySelector("#step-table-table");
 
 var grid;
-let x1 = 0,
-	y1 = 0,
-	x2 = 0,
-	y2 = 5;
+
 
 (function setup(evt) {
 	grid = new Grid();
 	grid.draw();
+
+    // small.addEventListener('click', () => {
+    //     grid.clear();
+    //     scale = 30;
+    //     grid.draw();
+    // });
 
     playBtn.addEventListener('click', () => {
         grid.clear();
@@ -30,9 +35,9 @@ let x1 = 0,
 		let y1 = y1Input.value;
 		let x2 = x2Input.value;
 		let y2 = y2Input.value;
-		let deltax = Math.abs(x1 - x2);
-		let deltay = Math.abs(y1 - y2);
-		let steps = Math.max(deltax, deltay);
+		let deltax = x2 - x1;
+		let deltay = y2 - y1;
+		let steps = Math.max(Math.abs(deltax), Math.abs(deltay));
 		let m = (deltay / deltax).toFixed(3);
 		let xInc = (deltax / steps).toFixed(3);
 		let yInc = (deltay / steps).toFixed(3);
@@ -47,7 +52,7 @@ let x1 = 0,
             x1 = +x1 + +xInc;
             y1 = +y1 + +yInc;
         }, 100);
-    })
+    });
 
 	startBtn.addEventListener("click", () => {
         grid.clear();
@@ -57,13 +62,13 @@ let x1 = 0,
         //     </table>`;
 
 
-		let x1 = x1Input.value;
+        let x1 = x1Input.value;
 		let y1 = y1Input.value;
 		let x2 = x2Input.value;
 		let y2 = y2Input.value;
-		let deltax = Math.abs(x1 - x2);
-		let deltay = Math.abs(y1 - y2);
-		let steps = Math.max(deltax, deltay);
+		let deltax = x2 - x1;
+		let deltay = y2 - y1;
+		let steps = Math.max(Math.abs(deltax), Math.abs(deltay));
 		let m = (deltay / deltax).toFixed(3);
 		let xInc = (deltax / steps).toFixed(3);
 		let yInc = (deltay / steps).toFixed(3);

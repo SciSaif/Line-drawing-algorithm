@@ -22,13 +22,13 @@
                             <div class="row">
 
                                 <label for="X1">From </label>
-                                <input type="number" class="pos" id="X1" placeholder="X1" min="1" max="16" value="1">
-                                <input type="number" class="pos" id="Y1" placeholder="Y1" min="1" max="16" value="1">
+                                <input type="number" class="pos" id="X1" placeholder="X1" min="1" max="26" value="1">
+                                <input type="number" class="pos" id="Y1" placeholder="Y1" min="1" max="26" value="1">
                             </div>
                             <div class="row">
                                 <label for="Y1">To </label>
-                                <input type="number" class="pos" id="X2" placeholder="X2" min="1" max="16" value="2">
-                                <input type="number" class="pos" id="Y2" placeholder="Y2" min="1" max="16" value="2">
+                                <input type="number" class="pos" id="X2" placeholder="X2" min="1" max="26" value="2">
+                                <input type="number" class="pos" id="Y2" placeholder="Y2" min="1" max="26" value="2">
                             </div>
                         </div>
                         <div class="col vertical-center">
@@ -94,6 +94,10 @@
 
             </div>
             <div class="col vertical-top">
+                <div class="btn-group " id="canvas-size" role="group" >
+                    <button type="button" class="btn btn-secondary" id="small">small</button>
+                    <button type="button" class="btn btn-secondary" id="large">large</button>
+                </div>
                 <canvas class="canvas" height="600" width="600" style="background-color: #3e3e3e"></canvas>
             </div>
         </div>
