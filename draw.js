@@ -9,6 +9,7 @@ const y1Input = document.querySelector("#Y1");
 const x2Input = document.querySelector("#X2");
 const y2Input = document.querySelector("#Y2");
 const startBtn = document.querySelector("#start-btn");
+const playBtn = document.querySelector("#play-btn");
 const info = document.querySelector("#info");
 const stepTable = document.querySelector("#step-table");
 const stepTableTable = document.querySelector("#step-table-table");
@@ -23,12 +24,37 @@ let x1 = 0,
 	grid = new Grid();
 	grid.draw();
 
+    playBtn.addEventListener('click', () => {
+        grid.clear();
+        let x1 = x1Input.value;
+		let y1 = y1Input.value;
+		let x2 = x2Input.value;
+		let y2 = y2Input.value;
+		let deltax = Math.abs(x1 - x2);
+		let deltay = Math.abs(y1 - y2);
+		let steps = Math.max(deltax, deltay);
+		let m = (deltay / deltax).toFixed(3);
+		let xInc = (deltax / steps).toFixed(3);
+		let yInc = (deltay / steps).toFixed(3);
+        let count = 0;
+        window.setInterval(()=> {
+            count++;
+            if(count > steps) {
+                return;
+            }
+            grid.drawRect(Math.round(x1), Math.round(y1));
+
+            x1 = +x1 + +xInc;
+            y1 = +y1 + +yInc;
+        }, 100);
+    })
+
 	startBtn.addEventListener("click", () => {
         grid.clear();
-        info.innerHTML = "";
-        stepTable.innerHTML = `
-            <table class="table" id="step-table-table">
-            </table>`;
+        // info.innerHTML = "";
+        // stepTable.innerHTML = `
+        //     <table class="table" id="step-table-table">
+        //     </table>`;
 
 
 		let x1 = x1Input.value;
