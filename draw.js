@@ -1,6 +1,6 @@
 const canvas = document.querySelector(".canvas");
 const ctx = canvas.getContext("2d");
-let scale = 25;
+let scale = 30;
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 
