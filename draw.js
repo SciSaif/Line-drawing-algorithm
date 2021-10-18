@@ -1,6 +1,6 @@
 const canvas = document.querySelector(".canvas");
 const ctx = canvas.getContext("2d");
-const scale = 30;
+let scale = 25;
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 
@@ -19,15 +19,21 @@ const stepTableTable = document.querySelector("#step-table-table");
 var grid;
 
 
-(function setup(evt) {
+(function setup() {
 	grid = new Grid();
 	grid.draw();
 
-    // small.addEventListener('click', () => {
-    //     grid.clear();
-    //     scale = 30;
-    //     grid.draw();
-    // });
+    small.addEventListener('click', () => {
+        grid.clear();
+        scale = 30
+        grid.draw();
+    });
+
+    large.addEventListener('click', () => {
+        grid.clear();
+        scale = 20;
+        grid.draw();
+    });
 
     playBtn.addEventListener('click', () => {
         grid.clear();

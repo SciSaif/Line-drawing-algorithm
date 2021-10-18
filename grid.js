@@ -38,6 +38,13 @@ function Grid() {
     // }
 
 	this.draw = function () {
+        //reset
+        ctx.fillStyle = "#3e3e3e";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        this.x = scale*3;
+        this.y = canvas.height - scale*3;
+
 		//the grid
         //vertical
 		for (let i = 0; i <= canvas.width; i += scale) {
