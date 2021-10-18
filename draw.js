@@ -38,10 +38,10 @@ let x1 = 0,
 		let yInc = (deltay / steps).toFixed(3);
         let count = 0;
         window.setInterval(()=> {
-            count++;
             if(count > steps) {
                 return;
             }
+            count++;
             grid.drawRect(Math.round(x1), Math.round(y1));
 
             x1 = +x1 + +xInc;
