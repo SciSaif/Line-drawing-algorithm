@@ -25,13 +25,13 @@ var grid;
 
     small.addEventListener('click', () => {
         grid.clear();
-        scale = 30
+        scale+=5;
         grid.draw();
     });
 
     large.addEventListener('click', () => {
         grid.clear();
-        scale = 20;
+        scale-=5;
         grid.draw();
     });
 
@@ -57,7 +57,7 @@ var grid;
 
             x1 = +x1 + +xInc;
             y1 = +y1 + +yInc;
-        }, 100);
+        }, 60);
     });
 
 	startBtn.addEventListener("click", () => {
